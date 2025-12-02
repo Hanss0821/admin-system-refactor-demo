@@ -4,11 +4,12 @@ import Hamburger from './components/Hamburger.vue'
 
 import { ref } from 'vue'
 
-const isActive = ref(true)
 
-const toggleClick = () => {
-  isActive.value = !isActive.value
+const isCollaspe = ref(false);
+const toggleClick = (value:boolean) => {
+  console.log(value);
 }
+
 </script>
 
 <template>
@@ -20,7 +21,7 @@ const toggleClick = () => {
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
     <HelloWorld msg="Vite + Vue" />
-    <Hamburger :isActive="isActive" @toggleClick="toggleClick" />
+    <Hamburger  v-model="isCollaspe"  @toggleClick="toggleClick" />
   </div>
   
 </template>
